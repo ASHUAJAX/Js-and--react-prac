@@ -1,0 +1,170 @@
+JavaScript objects offer a range of operations, from creation and property management to manipulation and inspection. Here’s a rundown of common operations on JavaScript objects:
+
+### 1. **Creating Objects**
+
+- **Object Literal**:  
+  ```javascript
+  const obj = { name: "Ashutosh", age: 25 };
+  ```
+- **Using `new Object()`**:  
+  ```javascript
+  const obj = new Object();
+  obj.name = "Ashutosh";
+  obj.age = 25;
+  ```
+- **Object Factory Functions**:  
+  ```javascript
+  function createUser(name, age) {
+    return { name, age };
+  }
+  const user = createUser("Ashutosh", 25);
+  ```
+- **Object Constructor Function**:  
+  ```javascript
+  function User(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  const user = new User("Ashutosh", 25);
+  ```
+
+### 2. **Adding and Updating Properties**
+
+- **Directly**:
+  ```javascript
+  obj.city = "Delhi";
+  obj.age = 26; // Update existing property
+  ```
+- **Using Bracket Notation**:
+  ```javascript
+  obj["state"] = "Delhi NCR";
+  ```
+
+### 3. **Deleting Properties**
+
+- **Using `delete`**:
+  ```javascript
+  delete obj.city;
+  ```
+
+### 4. **Accessing Properties**
+
+- **Dot Notation**:
+  ```javascript
+  console.log(obj.name);
+  ```
+- **Bracket Notation**:
+  ```javascript
+  console.log(obj["age"]);
+  ```
+
+### 5. **Checking Property Existence**
+
+- **Using `in` Operator**:
+  ```javascript
+  console.log("name" in obj); // true if exists
+  ```
+- **Using `hasOwnProperty`**:
+  ```javascript
+  console.log(obj.hasOwnProperty("city")); // true or false
+  ```
+
+### 6. **Looping through Properties**
+
+- **`for...in` Loop**:
+  ```javascript
+  for (let key in obj) {
+    console.log(key, obj[key]);
+  }
+  ```
+- **Using `Object.keys`**:
+  ```javascript
+  Object.keys(obj).forEach(key => {
+    console.log(key, obj[key]);
+  });
+  ```
+- **Using `Object.entries`**:
+  ```javascript
+  for (const [key, value] of Object.entries(obj)) {
+    console.log(key, value);
+  }
+  ```
+
+### 7. **Cloning Objects**
+
+- **Using Spread Operator**:
+  ```javascript
+  const objCopy = { ...obj };
+  ```
+- **Using `Object.assign`**:
+  ```javascript
+  const objCopy = Object.assign({}, obj);
+  ```
+- **Deep Cloning with `JSON` (for non-circular objects)**:
+  ```javascript
+  const deepCopy = JSON.parse(JSON.stringify(obj));
+  ```
+
+### 8. **Merging Objects**
+
+- **Using Spread Operator**:
+  ```javascript
+  const newObj = { ...obj, ...anotherObj };
+  ```
+- **Using `Object.assign`**:
+  ```javascript
+  const newObj = Object.assign({}, obj, anotherObj);
+  ```
+
+### 9. **Object Freezing and Sealing**
+
+- **Freezing (Prevents Adding/Deleting/Modifying)**:
+  ```javascript
+  Object.freeze(obj);
+  ```
+- **Sealing (Prevents Adding/Deleting, Allows Modifying)**:
+  ```javascript
+  Object.seal(obj);
+  ```
+
+### 10. **Getting Object Properties and Values**
+
+- **Keys**: Returns an array of keys.
+  ```javascript
+  const keys = Object.keys(obj);
+  ```
+- **Values**: Returns an array of values.
+  ```javascript
+  const values = Object.values(obj);
+  ```
+- **Entries**: Returns an array of `[key, value]` pairs.
+  ```javascript
+  const entries = Object.entries(obj);
+  ```
+
+### 11. **Destructuring**
+
+- Extracting properties into variables:
+  ```javascript
+  const { name, age } = obj;
+  ```
+
+### 12. **Using Object Methods**
+
+- **`Object.create`**: Creates a new object with a specified prototype.
+  ```javascript
+  const newObj = Object.create(obj);
+  ```
+- **`Object.defineProperty`**: Adds a property with specific descriptors.
+  ```javascript
+  Object.defineProperty(obj, "country", { value: "India", writable: true });
+  ```
+- **`Object.defineProperties`**: Adds multiple properties at once.
+  ```javascript
+  Object.defineProperties(obj, {
+    city: { value: "Delhi", writable: true },
+    state: { value: "Delhi NCR", writable: true }
+  });
+  ```
+
+Each operation offers unique capabilities, enabling versatile data handling in JavaScript applications.
