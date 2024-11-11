@@ -10,6 +10,7 @@ import Parent from './Comp/ContextComp/Parent'
 import CounterComp from './Comp/CounterComp'
 import RoutesMain from "./RoutesMain/index";
 import UseRefComp from './Comp/UseRefComp'
+import SearchWithDebounce from './Comp/SearchWithDebounce'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,7 +23,7 @@ function App() {
   {/* <Cars24Post/> */}
   {/* <Parent/> */}
   {/* <CounterComp/> */}
-  <UseRefComp/>
+  <SearchWithDebounce/>
     </>
   )
 }
