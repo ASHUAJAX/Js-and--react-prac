@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -11,8 +11,15 @@ import CounterComp from './Comp/CounterComp'
 import RoutesMain from "./RoutesMain/index";
 import UseRefComp from './Comp/UseRefComp'
 import SearchWithDebounce from './Comp/SearchWithDebounce'
+import { fetchPost } from './redux/Post/fetchPost'
+import { useDispatch } from 'react-redux'
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
+
+   useEffect(()=>{
+    dispatch(fetchPost());
+   },[]);
 
   return (
    

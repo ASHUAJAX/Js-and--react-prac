@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import 'animate.css'; 
 
 // const mockFetchData = (searchTerm) => {
 //   return new Promise((res, rej) => {
@@ -139,12 +140,12 @@ function SearchWithDebounce() {
                       width: "97%",
                       height: "70px",
                       margin: "auto",
-                      backgroundColor: "#7CFC0090",
+                      backgroundColor: "#7CFC0025",
                       marginTop: "20px",
                       gap: "10px",
-                      border: "5px solid #7CFC00",
+                      border: "5px solid #7CFC0050",
                       borderRadius: "10px",
-                      color:"black"
+                    color:"lime"
                     }}
                   >
                     <thead style={{fontWeight:"bold",textTransform:"capitalize"}}>
@@ -168,19 +169,19 @@ function SearchWithDebounce() {
                     <tbody>
                       {data.list.map((elm,index) => (
                         <tr key={index}>
-                           <td>{index+1}</td>
-                          <td>{elm?.dt_txt}</td>
-                          <td>{elm?.clouds?.all}</td>
-                          <td>{elm?.main?.feels_like}</td>
-                          <td>{elm?.main?.humidity}</td>
-                          <td>{elm?.main?.grnd_level}</td>
-                          <td>{elm?.main?.pressure}</td>
-                          <td>{elm?.main?.sea_level}</td>
-                          <td>{elm?.main?.temp}</td>
-                          <td>{elm?.main?.temp_kf}</td>
-                          <td>{elm?.main?.temp_max}</td>
-                          <td>{elm?.main?.temp_min}</td>
-                          <td>
+                           <td className="animate__animated animate__bounce  animate__jello">{index+1}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.dt_txt}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.clouds?.all}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.feels_like}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.humidity}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.grnd_level}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.pressure}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.sea_level}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.temp}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.temp_kf}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.temp_max}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">{elm?.main?.temp_min}</td>
+                          <td className="animate__animated animate__bounce  animate__jello">
                             {"Main :" +
                               " " +
                               elm?.weather?.[0].main +
@@ -188,7 +189,7 @@ function SearchWithDebounce() {
                               " " +
                               elm?.weather?.[0].description}
                           </td>
-                          <td>
+                          <td className="animate__animated animate__bounce  animate__jello">
                             {"Speed :" +
                               " " +
                               elm?.wind?.speed +
