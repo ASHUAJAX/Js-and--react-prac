@@ -13,6 +13,7 @@ import UseRefComp from './Comp/UseRefComp'
 import SearchWithDebounce from './Comp/SearchWithDebounce'
 import { fetchPost } from './redux/Post/fetchPost'
 import { useDispatch } from 'react-redux'
+import ToDoApp from './Comp/ToDoApp/ToDoApp'
 function App() {
   const [count, setCount] = useState(0);
   const dispatch = useDispatch();
@@ -30,7 +31,8 @@ function App() {
   {/* <Cars24Post/> */}
   {/* <Parent/> */}
   {/* <CounterComp/> */}
-  <SearchWithDebounce/>
+  {/* <SearchWithDebounce/> */}
+  <ToDoApp/>
     </>
   )
 }
